@@ -83,47 +83,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-/*@Composable
-fun ColleagueItem (
-    colleague: ColleagueEntity,
-    onItemClick: () -> Unit = {},
-    onDeleteClick: () -> Unit = {},
-    modifier: Modifier = Modifier
-) {
-    Row(
-        modifier = modifier
-            .clickable { onItemClick() }
-            .fillMaxWidth()
-            .padding(16.dp),
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Text(
-            text = colleague.firstName,
-            fontSize = 22.sp,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.weight(1f)
-        )
-        Text(
-            text = "Shift Status",
-            modifier = Modifier.weight(1f)
-
-        )
-        Checkbox(
-            checked = colleague.clockInStatus == 1L,
-            onCheckedChange = {  },
-            modifier = Modifier.weight(1f)
-        )
-        IconButton(onClick = onDeleteClick) {
-            Icon(
-                imageVector = Icons.Outlined.Delete,
-                contentDescription = "Delete person",
-                tint = Color.Gray
-            )
-        }
-    }
-}*/
-
 @Composable
 fun ToDoItem() {
     Text(
@@ -145,6 +104,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     FlowDoListTheme {
-        Greeting("Android")
+        ToDoItem()
     }
 }
