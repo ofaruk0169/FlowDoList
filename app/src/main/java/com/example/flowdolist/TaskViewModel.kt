@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
@@ -22,7 +23,14 @@ class TaskViewModel(
             }
         }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(), emptyList())
+
     private val _state = MutableStateFlow(TaskState())
+    val state = combine(_state, _sortType, _tasks) { state, sortType, tasks ->
+        state.copy(
+            tasks = tasks,
+            sortType = sortType
+        )
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), TaskState())
 
     fun onEvent(event: TaskEvent) {
         when(event) {
@@ -37,7 +45,26 @@ class TaskViewModel(
                 )}
             }
             TaskEvent.SaveTask -> {
+                val taskName = state.value.taskName
+                val taskDescription = state.value.taskDescription
 
+                if(taskName.isBlank() || taskDescription.isBlank()) {
+                    return
+                }
+
+                val task = Task(
+                    taskName = taskName,
+                    taskDescription = taskDescription
+                )
+                viewModelScope.launch {
+                    dao.upsertTask(task)
+                }
+                _state.update { it.copy(
+                    isAddingTask = false,
+                    taskName = "",
+                    taskDescription = ""
+
+                )}
             }
             is TaskEvent.SetTaskDescription -> {
                 _state.update { it.copy(
