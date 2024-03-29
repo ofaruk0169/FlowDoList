@@ -63,12 +63,11 @@ class TaskViewModel(
                     isAddingTask = false,
                     taskName = "",
                     taskDescription = ""
-
                 )}
             }
             is TaskEvent.SetTaskDescription -> {
                 _state.update { it.copy(
-                    taskName = event.taskDescription
+                    taskDescription = event.taskDescription
                 ) }
             }
             is TaskEvent.SetTaskName -> {
