@@ -29,7 +29,7 @@ fun AddTaskDialog(
                 modifier = Modifier.padding(16.dp)
             ) {
                 Text(
-                    text = "Add Contact",
+                    text = "Add Task",
                     style = MaterialTheme.typography.headlineMedium
                 )
                 TextField(

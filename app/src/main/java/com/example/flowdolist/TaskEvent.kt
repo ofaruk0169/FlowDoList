@@ -1,5 +1,9 @@
 package com.example.flowdolist
 
+
+// These are just different Events that the user performs when interacting with
+//our application
+
 sealed interface TaskEvent {
     object SaveTask: TaskEvent
     data class SetTaskName(val taskName: String): TaskEvent

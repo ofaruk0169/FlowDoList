@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    //to use annotation processing you need to add the kapt plugin below
+    //otherwise Gradle will not find it
     id("kotlin-kapt")
 }
 
@@ -71,6 +73,7 @@ dependencies {
     //Room
     val room_version = "2.6.1"
     implementation ("androidx.room:room-ktx:$room_version")
+    //this kapt is for annotation processing
     kapt ("androidx.room:room-compiler:$room_version")
 
 }
