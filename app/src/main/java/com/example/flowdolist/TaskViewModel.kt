@@ -2,6 +2,7 @@ package com.example.flowdolist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
@@ -9,11 +10,13 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 
 //View model we map all of our states from TaskState class
 
-class TaskViewModel(
+@HiltViewModel
+class TaskViewModel @Inject constructor(
     private val dao: TaskDao
 ): ViewModel() {
 

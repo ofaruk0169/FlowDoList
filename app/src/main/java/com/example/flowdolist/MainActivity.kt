@@ -38,26 +38,24 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.room.Room
 import com.example.flowdolist.ui.theme.FlowDoListTheme
+import javax.inject.Inject
 
 
-class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity @Inject constructor(
+
+) {
 
 
     //Dagger Hilt this
 
-    private val db by lazy {
+    @Inject
+    lateinit var db: TaskDatabase
 
-        Room.databaseBuilder(
-            applicationContext,
-            TaskDatabase::class.java,
-            "tasks.db"
-        ).build()
-    }
     private val viewModel by viewModels<TaskViewModel>(
         factoryProducer = {
             object : ViewModelProvider.Factory {
                 override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                    return TaskViewModel(db.dao) as T
+                    return TaskViewModel(db.taskDao()) as T
                 }
             }
         }

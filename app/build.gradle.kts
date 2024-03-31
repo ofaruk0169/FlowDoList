@@ -4,6 +4,7 @@ plugins {
     //to use annotation processing you need to add the kapt plugin below
     //otherwise Gradle will not find it
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -62,6 +63,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    implementation("com.google.android.ads:mediation-test-suite:3.0.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -71,9 +73,22 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     //Room
-    val room_version = "2.6.1"
-    implementation ("androidx.room:room-ktx:$room_version")
+    val roomVersion = "2.6.1"
+    implementation ("androidx.room:room-ktx:$roomVersion")
     //this kapt is for annotation processing
-    kapt ("androidx.room:room-compiler:$room_version")
+    kapt ("androidx.room:room-compiler:$roomVersion")
+
+
+    // ViewModel Compose
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1")
+
+
+    //Dagger - Hilt
+    val dhVersion = "2.40.5"
+    implementation ("com.google.dagger:hilt-android:$dhVersion")
+    kapt ("com.google.dagger:hilt-android-compiler:$dhVersion")
+    implementation ("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+    kapt ("androidx.hilt:hilt-compiler:1.0.0")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
 
 }
