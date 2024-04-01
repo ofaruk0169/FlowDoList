@@ -2,6 +2,7 @@ package com.example.flowdolist
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import com.example.flowdolist.feature_task.domain.model.Task
 
 
 // We have created the Table class to define the table

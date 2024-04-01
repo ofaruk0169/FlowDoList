@@ -1,4 +1,4 @@
-package com.example.flowdolist
+package com.example.flowdolist.feature_task.domain.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -1,5 +1,7 @@
 package com.example.flowdolist
 
+import com.example.flowdolist.feature_task.domain.model.Task
+
 
 // These are just different Events that the user performs when interacting with
 //our application
