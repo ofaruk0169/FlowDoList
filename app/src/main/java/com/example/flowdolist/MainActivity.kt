@@ -43,7 +43,7 @@ import com.example.flowdolist.ui.theme.FlowDoListTheme
 class MainActivity : ComponentActivity() {
 
 
-    //Dagger Hilt this
+    //Dagger Hilt start
 
     private val db by lazy {
 
@@ -63,7 +63,7 @@ class MainActivity : ComponentActivity() {
         }
     )
 
-    //Dagger Hilt this
+    //Dagger Hilt end
 
 
     @OptIn(ExperimentalMaterial3Api::class)
