@@ -76,4 +76,6 @@ dependencies {
     //this kapt is for annotation processing
     kapt ("androidx.room:room-compiler:$room_version")
 
+
+
 }
