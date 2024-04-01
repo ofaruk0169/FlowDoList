@@ -10,7 +10,7 @@ import androidx.compose.runtime.getValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.room.Room
-import com.example.flowdolist.TaskDatabase
+import com.example.flowdolist.feature_task.data.data_source.TaskDatabase
 import com.example.flowdolist.TaskScreen
 import com.example.flowdolist.TaskViewModel
 import com.example.flowdolist.ui.theme.FlowDoListTheme
