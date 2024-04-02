@@ -6,6 +6,7 @@ import com.example.flowdolist.TaskEvent
 import com.example.flowdolist.feature_task.data.data_source.TaskDatabase
 import com.example.flowdolist.feature_task.data.repository.TaskRepositoryImpl
 import com.example.flowdolist.feature_task.domain.repository.TaskRepository
+import com.example.flowdolist.feature_task.domain.use_case.AddTask
 import com.example.flowdolist.feature_task.domain.use_case.DeleteTask
 import com.example.flowdolist.feature_task.domain.use_case.GetTasks
 import com.example.flowdolist.feature_task.domain.use_case.TaskUseCases
@@ -40,7 +41,8 @@ object AppModule {
     fun provideTaskUseCases(repository: TaskRepository): TaskUseCases {
         return TaskUseCases(
             getTasks = GetTasks(repository),
-            deleteTasks = DeleteTask(repository)
+            deleteTasks = DeleteTask(repository),
+            addTask = AddTask(repository)
         )
     }
 }

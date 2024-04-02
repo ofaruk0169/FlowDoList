@@ -17,3 +17,5 @@ data class Task(
     val id: Int = 0
 ) {
 }
+
+class InvalidNoteException(message: String): Exception(message)
