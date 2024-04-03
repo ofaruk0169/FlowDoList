@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             FlowDoListTheme {
                 val state by viewModel.state.collectAsState()
-                TaskScreen(state = state, onEvent = viewModel::onEvent)
+               // TaskScreen(state = state, onEvent = viewModel::onEvent)
             }
         }
     }

@@ -19,12 +19,15 @@ class GetTasks(
                     when(taskOrder) {
                         is TaskOrder.Title -> tasks.sortedBy { it.taskName.lowercase() }
                         is TaskOrder.Date -> tasks.sortedBy { it.taskCreatedAt }
+                        is TaskOrder.Color -> tasks.sortedBy { it.color }
                     }
                 }
                 is OrderType.Descending -> {
                     when(taskOrder) {
                         is TaskOrder.Title -> tasks.sortedByDescending { it.taskName.lowercase() }
                         is TaskOrder.Date -> tasks.sortedByDescending { it.taskCreatedAt }
+                        is TaskOrder.Color -> tasks.sortedByDescending { it.color }
+
                     }
                 }
             }

@@ -1,4 +1,4 @@
-package com.example.flowdolist.feature_task.presentation.tasks.components
+package com.example.flowdolist.feature_task.presentation.tasks
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -57,7 +57,11 @@ class TasksViewModel @Inject constructor(
                 }
             }
 
-            TasksEvent.ToggleOrderSection -> TODO()
+            is TasksEvent.ToggleOrderSection -> {
+                _state.value = state.value.copy(
+                    isOrderSectionVisible = !state.value.isOrderSectionVisible
+                )
+            }
         }
     }
 
@@ -74,4 +78,3 @@ class TasksViewModel @Inject constructor(
     }
 }
 
-1:04:33

@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 
 //View model we map all of our states from TaskState class
 
+/*
 class TaskViewModel(
     private val dao: TaskDao
 ): ViewModel() {
@@ -52,6 +53,7 @@ class TaskViewModel(
             TaskEvent.SaveTask -> {
                 val taskName = state.value.taskName
                 val taskDescription = state.value.taskDescription
+                val taskColor = state.value.taskColor
 
                 if(taskName.isBlank() || taskDescription.isBlank()) {
                     return
@@ -59,7 +61,8 @@ class TaskViewModel(
 
                 val task = Task(
                     taskName = taskName,
-                    taskDescription = taskDescription
+                    taskDescription = taskDescription,
+                    taskColor = taskColor
                 )
                 viewModelScope.launch {
                     dao.upsertTask(task)
@@ -90,4 +93,4 @@ class TaskViewModel(
             }
         }
     }
-}
+}*/
