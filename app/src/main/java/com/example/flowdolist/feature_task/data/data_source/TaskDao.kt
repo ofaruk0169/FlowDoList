@@ -17,6 +17,9 @@ interface TaskDao  {
     @Upsert
     suspend fun upsertTask(task: Task)
 
+    @Query("SELECT * FROM Task WHERE id = :id")
+    suspend fun getTaskById(id: Int): Task?
+
     @Delete
     suspend fun deleteTask(task: Task)
 

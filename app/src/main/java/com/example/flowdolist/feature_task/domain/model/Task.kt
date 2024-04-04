@@ -6,11 +6,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 // Define your colors as top-level constants or within a companion object
-val RED_ORANGE = Color.parseColor("#FF5733")
-val LIGHT_GREEN = Color.parseColor("#90EE90")
-val VIOLET = Color.parseColor("#EE82EE")
-val BABY_BLUE = Color.parseColor("#89CFF0")
-val RED_PINK = Color.parseColor("#FF69B4")
+val RED_ORANGE = Color.parseColor("#FFFF5733")
+val LIGHT_GREEN = Color.parseColor("#FF90EE90")
+val VIOLET = Color.parseColor("#FFEE82EE")
+val BABY_BLUE = Color.parseColor("#FF89CFF0")
+val RED_PINK = Color.parseColor("#FFFF69B4")
 
 
 //This will define the field that our Task table should have
@@ -30,4 +30,4 @@ data class Task(
     }
 }
 
-class InvalidNoteException(message: String): Exception(message)
+class InvalidTaskException(message: String): Exception(message)

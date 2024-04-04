@@ -25,6 +25,8 @@ interface TaskRepository {
 
     suspend fun upsertTask(task: Task)
 
+    suspend fun getTaskById(id: Int): Task?
+
     suspend fun deleteTask(task: Task)
 
     fun getOldestTasks(): Flow<List<Task>>

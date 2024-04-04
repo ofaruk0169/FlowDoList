@@ -8,6 +8,7 @@ import com.example.flowdolist.feature_task.data.repository.TaskRepositoryImpl
 import com.example.flowdolist.feature_task.domain.repository.TaskRepository
 import com.example.flowdolist.feature_task.domain.use_case.AddTask
 import com.example.flowdolist.feature_task.domain.use_case.DeleteTask
+import com.example.flowdolist.feature_task.domain.use_case.GetTask
 import com.example.flowdolist.feature_task.domain.use_case.GetTasks
 import com.example.flowdolist.feature_task.domain.use_case.TaskUseCases
 import dagger.Module
@@ -42,7 +43,8 @@ object AppModule {
         return TaskUseCases(
             getTasks = GetTasks(repository),
             deleteTasks = DeleteTask(repository),
-            addTask = AddTask(repository)
+            addTask = AddTask(repository),
+            getTask = GetTask(repository)
         )
     }
 }

@@ -5,5 +5,6 @@ import com.example.flowdolist.TaskEvent
 data class TaskUseCases(
     val getTasks: GetTasks,
     val deleteTasks: DeleteTask,
-    val addTask: AddTask
+    val addTask: AddTask,
+    val getTask: GetTask
 )
