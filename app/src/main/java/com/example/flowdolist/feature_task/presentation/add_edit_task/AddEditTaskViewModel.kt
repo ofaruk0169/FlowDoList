@@ -2,6 +2,7 @@ package com.example.flowdolist.feature_task.presentation.add_edit_task
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.graphics.toArgb
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -30,7 +31,7 @@ class AddEditTaskViewModel @Inject constructor(
     ))
     val taskContent: State<TaskTextFieldState> = _taskContent
 
-    private val _taskColor = mutableStateOf(Task.taskColors.random())
+    private val _taskColor = mutableStateOf(Task.taskColors.random().toArgb())
     val taskColor: State<Int> = _taskColor
 
     private val _eventFlow = MutableSharedFlow<UiEvent>()

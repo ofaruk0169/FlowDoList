@@ -4,13 +4,7 @@ import android.graphics.Color
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-
-// Define your colors as top-level constants or within a companion object
-val RED_ORANGE = Color.parseColor("#FFFF5733")
-val LIGHT_GREEN = Color.parseColor("#FF90EE90")
-val VIOLET = Color.parseColor("#FFEE82EE")
-val BABY_BLUE = Color.parseColor("#FF89CFF0")
-val RED_PINK = Color.parseColor("#FFFF69B4")
+import com.example.flowdolist.ui.theme.*
 
 
 //This will define the field that our Task table should have
@@ -26,7 +20,7 @@ data class Task(
     val id: Int = 0
 ) {
     companion object {
-        val taskColors = listOf(RED_ORANGE, LIGHT_GREEN, VIOLET, BABY_BLUE, RED_PINK)
+        val taskColors = listOf(RedOrange, LightGreen, Violet, BabyBlue, RedPink)
     }
 }
 
