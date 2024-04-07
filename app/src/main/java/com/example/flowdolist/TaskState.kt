@@ -1,6 +1,6 @@
 package com.example.flowdolist
 
-import com.example.flowdolist.feature_task.domain.model.LIGHT_GREEN
+//import com.example.flowdolist.feature_task.domain.model.LIGHT_GREEN
 import com.example.flowdolist.feature_task.domain.model.Task
 
 
@@ -11,7 +11,7 @@ data class TaskState(
     val tasks: List<Task> = emptyList(),
     val taskName: String = "",
     val taskDescription: String = "",
-    val taskColor: Int = LIGHT_GREEN,
+    //val taskColor: Int = LIGHT_GREEN,
     val isAddingTask: Boolean = false,
     val sortType: SortType = SortType.MOST_RECENT
 )
