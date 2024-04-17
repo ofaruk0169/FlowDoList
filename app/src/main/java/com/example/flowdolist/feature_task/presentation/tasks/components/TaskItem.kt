@@ -34,15 +34,15 @@ import com.example.flowdolist.feature_task.domain.model.Task
 fun TaskItem(
     task: Task,
     modifier: Modifier = Modifier,
-    cornerRadius: Dp = 10.dp,
-    cutCornerSize: Dp = 30.dp,
+    //cornerRadius: Dp = 10.dp,
+    //cutCornerSize: Dp = 30.dp,
     onDeleteClick: () -> Unit
 
 ) {
     Box(
         modifier = modifier
     ) {
-        Canvas(modifier = Modifier.matchParentSize()) {
+/*        Canvas(modifier = Modifier.matchParentSize()) {
             val clipPath = Path().apply {
                 lineTo(size.width - cutCornerSize.toPx(), 0f)
                 lineTo(size.width, cutCornerSize.toPx())
@@ -62,7 +62,7 @@ fun TaskItem(
 
                 )
             }
-        }
+        }*/
         Column(
             modifier = Modifier
                 .fillMaxSize()

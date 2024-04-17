@@ -22,12 +22,12 @@ class AddEditTaskViewModel @Inject constructor(
 ): ViewModel() {
 
     private val _taskTitle = mutableStateOf(TaskTextFieldState(
-        hint = "Enter title..."
+        hint = "Enter task name..."
     ))
     val taskTitle: State<TaskTextFieldState> = _taskTitle
 
     private val _taskContent = mutableStateOf(TaskTextFieldState(
-        hint = "Enter some content"
+        hint = "Enter task description"
     ))
     val taskContent: State<TaskTextFieldState> = _taskContent
 

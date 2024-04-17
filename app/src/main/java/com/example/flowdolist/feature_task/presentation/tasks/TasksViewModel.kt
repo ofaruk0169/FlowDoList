@@ -23,7 +23,7 @@ class TasksViewModel @Inject constructor(
     private val taskUseCases: TaskUseCases
 ) : ViewModel() {
 
-    private val _state = mutableStateOf<TasksState>(TasksState())
+    private val _state = mutableStateOf(TasksState())
     val state: State<TasksState> = _state
 
     private var recentlyDeletedTask: Task? = null
@@ -48,6 +48,7 @@ class TasksViewModel @Inject constructor(
             is TasksEvent.DeleteTask -> {
                 viewModelScope.launch {
                     taskUseCases.deleteTasks(event.task)
+                    recentlyDeletedTask = event.task
                 }
             }
             is TasksEvent.RestoreTask -> {

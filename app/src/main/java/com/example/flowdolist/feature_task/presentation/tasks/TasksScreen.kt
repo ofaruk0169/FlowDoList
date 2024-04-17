@@ -21,6 +21,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -30,6 +31,8 @@ import com.example.flowdolist.SortType
 import com.example.flowdolist.TaskEvent
 import com.example.flowdolist.feature_task.presentation.tasks.components.OrderSection
 import com.example.flowdolist.feature_task.presentation.tasks.components.TaskItem
+import com.example.flowdolist.feature_task.presentation.util.Screen
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -41,7 +44,9 @@ fun TasksScreen(
     // Retrieve the state from the view model
     val state = viewModel.state.value
 
-    val snackbarHostState = remember { SnackbarHostState() }
+    val snackbarHostState = remember {
+        SnackbarHostState()
+    }
 
 
     // Remember the coroutine scope
@@ -49,21 +54,27 @@ fun TasksScreen(
 
     // Define the scaffold layout
     Scaffold(
+        snackbarHost = {
+            SnackbarHost(snackbarHostState)
+        },
         floatingActionButton = {
             // Floating action button for adding tasks
             FloatingActionButton(
                 onClick = {
-
+                    navController.navigate(Screen.AddEditTaskScreen.route)
                 }
             ) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Add Task")
             }
-        }
-    ) { paddingValues ->
+        },
+
+
+        ) { paddingValues ->
         // Apply padding provided by the Scaffold to the Column
         Column(
             modifier = Modifier
                 .padding(paddingValues)
+                .padding(horizontal = 16.dp, vertical = 8.dp)
                 .fillMaxSize()
         ) {
             Row(
@@ -72,7 +83,7 @@ fun TasksScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Your note",
+                    text = "Go with the flow and do your todos",
                     style = MaterialTheme.typography.headlineSmall
                 )
                 IconButton(
@@ -108,21 +119,27 @@ fun TasksScreen(
                         task = task,
                         modifier = Modifier
                             .fillMaxWidth()
+                            .background(color = Color(task.color))
                             .clickable {
-
+                                navController.navigate(
+                                    Screen.AddEditTaskScreen.route +
+                                            "?taskId=${task.id}&taskColor=${task.color}"
+                                )
                             },
                         onDeleteClick = {
                             viewModel.onEvent(TasksEvent.DeleteTask(task))
                             scope.launch {
                                 val result = snackbarHostState.showSnackbar(
-                                    message = "Note deleted",
+                                    message = "Task deleted",
                                     actionLabel = "Undo"
                                 )
                                 if (result == SnackbarResult.ActionPerformed) {
                                     viewModel.onEvent(TasksEvent.RestoreTask)
                                 }
+
                             }
-                        }
+                        },
+
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                 }
