@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Done
+import androidx.compose.material.icons.filled.Save
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
@@ -83,7 +84,7 @@ fun AddEditTaskScreen (
                 },
                 //modifier = Modifier.background(MaterialTheme.colorScheme.onPrimary)
             ) {
-                Icon(imageVector = Icons.Default.Done, contentDescription = "Save Task")
+                Icon(imageVector = Icons.Default.Save, contentDescription = "Save Task")
             }
         },
         snackbarHost = { snackbarHostState }

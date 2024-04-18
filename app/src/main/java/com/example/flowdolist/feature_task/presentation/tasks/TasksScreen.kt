@@ -17,6 +17,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Sort
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -34,6 +35,9 @@ import com.example.flowdolist.feature_task.presentation.tasks.components.TaskIte
 import com.example.flowdolist.feature_task.presentation.util.Screen
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import androidx.compose.material.icons.filled.Sort
+
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -92,7 +96,7 @@ fun TasksScreen(
                     },
                 ) {
                     Icon(
-                        imageVector = Icons.Default.ArrowDropDown,
+                        imageVector = Icons.Filled.Sort,
                         contentDescription = "Sort"
                     )
                 }
