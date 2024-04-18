@@ -3,8 +3,6 @@ package com.example.flowdolist.feature_task.presentation.tasks
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.flowdolist.feature_task.domain.use_case.TaskUseCases
-import com.example.flowdolist.feature_task.presentation.tasks.TasksEvent
-import com.example.flowdolist.feature_task.presentation.tasks.TasksState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import androidx.compose.runtime.State
