@@ -2,7 +2,6 @@ package com.example.flowdolist.di
 
 import android.app.Application
 import androidx.room.Room
-import com.example.flowdolist.TaskEvent
 import com.example.flowdolist.feature_task.data.data_source.TaskDatabase
 import com.example.flowdolist.feature_task.data.repository.TaskRepositoryImpl
 import com.example.flowdolist.feature_task.domain.repository.TaskRepository
