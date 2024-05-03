@@ -20,6 +20,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
+    //Instance of our database (Room)
     @Provides
     @Singleton
     fun provideTaskDatabase(app: Application): TaskDatabase {
