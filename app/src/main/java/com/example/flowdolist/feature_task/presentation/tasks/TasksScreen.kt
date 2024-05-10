@@ -143,7 +143,7 @@ fun TasksScreen(
                             // Launch another coroutine for delay and dismissal
                             scope.launch {
                                 // Delay for 5 seconds
-                                delay(5000)
+                                delay(10000)
 
                                 // Dismiss the snackbar after the delay
                                 snackbarHostState.currentSnackbarData?.dismiss()
