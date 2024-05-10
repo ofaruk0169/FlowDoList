@@ -24,6 +24,7 @@ import androidx.navigation.NavController
 import com.example.flowdolist.feature_task.presentation.tasks.components.OrderSection
 import com.example.flowdolist.feature_task.presentation.tasks.components.TaskItem
 import com.example.flowdolist.feature_task.presentation.util.Screen
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
@@ -122,19 +123,30 @@ fun TasksScreen(
                                             "?taskId=${task.id}&taskColor=${task.color}"
                                 )
                             },
+
                         onDeleteClick = {
                             viewModel.onEvent(TasksEvent.DeleteTask(task))
                             scope.launch {
+                                // Show the snackbar and capture the result
                                 val result = snackbarHostState.showSnackbar(
                                     message = "Task deleted",
                                     actionLabel = "Undo"
                                 )
 
-
+                                // Handle the action performed on the snackbar
                                 if (result == SnackbarResult.ActionPerformed) {
                                     viewModel.onEvent(TasksEvent.RestoreTask)
-                                }
 
+                                }
+                            }
+
+                            // Launch another coroutine for delay and dismissal
+                            scope.launch {
+                                // Delay for 5 seconds
+                                delay(5000)
+
+                                // Dismiss the snackbar after the delay
+                                snackbarHostState.currentSnackbarData?.dismiss()
                             }
                         },
                     )
