@@ -129,6 +129,8 @@ fun TasksScreen(
                                     message = "Task deleted",
                                     actionLabel = "Undo"
                                 )
+
+
                                 if (result == SnackbarResult.ActionPerformed) {
                                     viewModel.onEvent(TasksEvent.RestoreTask)
                                 }
