@@ -104,7 +104,11 @@ fun TasksScreen(
                     }
                 )
             }
+
+
             Spacer(modifier = Modifier.height(16.dp))
+
+
             LazyColumn(modifier = Modifier.fillMaxSize()) {
                 items(state.tasks) { task ->
                     TaskItem(
@@ -131,7 +135,6 @@ fun TasksScreen(
 
                             }
                         },
-
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                 }
