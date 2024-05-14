@@ -82,7 +82,6 @@ fun AddEditTaskScreen (
                 onClick = {
                     viewModel.onEvent(AddEditTaskEvent.SaveTask)
                 },
-                //modifier = Modifier.background(MaterialTheme.colorScheme.onPrimary)
             ) {
                 Icon(imageVector = Icons.Default.Save, contentDescription = "Save Task")
             }
