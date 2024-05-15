@@ -133,6 +133,8 @@ fun AddEditTaskScreen (
             Spacer(modifier = Modifier.height(16.dp))
 
 
+            //Decided to use regular textfield instead of transparenttextfield as shown in tutorial.
+
             TextField(
                 value = titleState.text,
                 onValueChange = { newValue ->
