@@ -73,7 +73,7 @@ fun TaskItem(
             modifier = Modifier.align(Alignment.BottomEnd)
         ) {
             Icon(
-                imageVector = Icons.Default.Do,
+                imageVector = Icons.Default.Done,
                 contentDescription = "Delete Task",
                 modifier = Modifier
                     .size(44.dp) // Adjust size as needed
