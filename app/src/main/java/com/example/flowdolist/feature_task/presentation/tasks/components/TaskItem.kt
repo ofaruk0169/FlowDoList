@@ -1,6 +1,7 @@
 package com.example.flowdolist.feature_task.presentation.tasks.components
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -8,8 +9,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Done
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -69,8 +73,15 @@ fun TaskItem(
             modifier = Modifier.align(Alignment.BottomEnd)
         ) {
             Icon(
-                imageVector = Icons.Default.Delete,
-                contentDescription = "Delete Task"
+                imageVector = Icons.Default.Do,
+                contentDescription = "Delete Task",
+                modifier = Modifier
+                    .size(44.dp) // Adjust size as needed
+                    .border(
+                        width = 1.dp, // Adjust width for the faint outline
+                        color = Color.Gray, // Adjust color for the faint outline
+                        shape = CircleShape // Adjust shape as needed
+                    )
             )
         }
     }
