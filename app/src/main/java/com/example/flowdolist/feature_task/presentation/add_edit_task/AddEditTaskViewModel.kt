@@ -47,12 +47,12 @@ class AddEditTaskViewModel @Inject constructor(
                         currentTaskId = task.id
                         _taskTitle.value = taskTitle.value.copy(
                             text = task.taskName,
-                            isHintVisible = false
+                            //isHintVisible = false
                         )
 
                         _taskContent.value = taskContent.value.copy(
                             text = task.taskDescription,
-                            isHintVisible = false
+                            //isHintVisible = false
                         )
                         _taskColor.value = task.color
                     }
@@ -70,8 +70,8 @@ class AddEditTaskViewModel @Inject constructor(
             }
             is AddEditTaskEvent.ChangeTitleFocus -> {
                 _taskTitle.value = taskTitle.value.copy(
-                    isHintVisible = !event.focusState.isFocused &&
-                        taskTitle.value.text.isBlank()
+                    //isHintVisible = !event.focusState.isFocused &&
+                        //taskTitle.value.text.isBlank()
                 )
             }
             is AddEditTaskEvent.EnteredContent -> {
@@ -81,8 +81,8 @@ class AddEditTaskViewModel @Inject constructor(
             }
             is AddEditTaskEvent.ChangeContentFocus -> {
                 _taskContent.value = taskContent.value.copy(
-                    isHintVisible = !event.focusState.isFocused &&
-                            taskTitle.value.text.isBlank()
+                    //isHintVisible = !event.focusState.isFocused &&
+                           //taskTitle.value.text.isBlank()
                 )
             }
             is AddEditTaskEvent.ChangeColor -> {
