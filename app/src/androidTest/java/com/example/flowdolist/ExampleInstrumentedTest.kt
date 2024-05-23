@@ -12,6 +12,9 @@ import org.junit.Assert.*
  * Instrumented test, which will execute on an Android device.
  *
  * See [testing documentation](http://d.android.com/tools/testing).
+ * Related to Android and therefore need Android components such as the Context
+ * and UI tests that involve Compose or fragment activities.
+ * Will need an emulator to actually run
  */
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
