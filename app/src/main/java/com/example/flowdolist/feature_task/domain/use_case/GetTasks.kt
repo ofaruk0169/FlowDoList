@@ -11,6 +11,7 @@ class GetTasks(
     private val repository: TaskRepository
 ) {
     operator fun invoke(
+        //test - return correct order, if we pass the correct order
         taskOrder: TaskOrder = TaskOrder.Date(OrderType.Descending)
     ): Flow<List<Task>> {
         return repository.getMostRecentTasks().map { tasks ->
