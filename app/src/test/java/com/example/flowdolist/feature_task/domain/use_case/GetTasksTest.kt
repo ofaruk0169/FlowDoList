@@ -6,6 +6,7 @@ import com.example.flowdolist.feature_task.domain.model.Task
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.*
 import org.junit.Before
+import org.junit.Test
 
 class GetTasksTest {
 
@@ -32,7 +33,10 @@ class GetTasksTest {
         runBlocking {
             tasksToInsert.forEach { fakeRepository.upsertTask(it)}
         }
+    }
 
+    @Test
+    fun `Order tasks by title ascending, correct order`() {
 
     }
 }
