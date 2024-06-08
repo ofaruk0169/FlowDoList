@@ -16,7 +16,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.example.flowdolist.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -50,6 +50,12 @@ android {
         }
     }
 }
+
+/*repositories {
+    google()
+    mavenCentral()
+    maven { url "https://jitpack.io" } // Added JitPack repository
+}*/
 
 dependencies {
 
@@ -100,8 +106,13 @@ dependencies {
     androidTestImplementation ("androidx.test.ext:junit:1.1.3")
     androidTestImplementation ("androidx.test:core-ktx:1.4.0")
     androidTestImplementation ("com.squareup.okhttp3:mockwebserver:4.9.1")
-    androidTestImplementation ("io.mockk:mockk-android:1.10.5")
+    //androidTestImplementation ("io.mockk:mockk-android:1.10.5")
+    androidTestImplementation("io.mockk:mockk-android:1.12.0") // Updated MockK version
+    androidTestImplementation("com.linkedin.dexmaker:dexmaker:2.28.0") // Added dexmaker dependency
     androidTestImplementation ("androidx.test:runner:1.4.0")
+
+    androidTestImplementation("androidx.test:core:1.4.0") // Added core dependency
+    androidTestImplementation("androidx.test:rules:1.4.0") // Added rules dependency
 
 
 

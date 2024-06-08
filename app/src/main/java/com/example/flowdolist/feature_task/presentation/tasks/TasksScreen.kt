@@ -18,9 +18,11 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.flowdolist.core.util.TestTags
 import com.example.flowdolist.feature_task.presentation.tasks.components.OrderSection
 import com.example.flowdolist.feature_task.presentation.tasks.components.TaskItem
 import com.example.flowdolist.feature_task.presentation.util.Screen
@@ -97,7 +99,8 @@ fun TasksScreen(
                 OrderSection(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 16.dp),
+                        .padding(vertical = 16.dp)
+                        .testTag(TestTags.ORDER_SECTION),
                     taskOrder = state.taskOrder,
                     onOrderChange = {
                         viewModel.onEvent(TasksEvent.Order(it))
