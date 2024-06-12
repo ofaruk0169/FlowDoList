@@ -7,10 +7,6 @@ import androidx.room.Upsert
 import com.example.flowdolist.feature_task.domain.model.Task
 import kotlinx.coroutines.flow.Flow
 
-
-//The DAO is an interface in Kotlin that basically defines how we want to
-//interact with the database
-
 @Dao
 interface TaskDao  {
 
