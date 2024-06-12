@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey
 import com.example.flowdolist.ui.theme.*
 
 //This will define the field that our Task table should have
-
 @Entity()
 data class Task(
     val taskName: String,
