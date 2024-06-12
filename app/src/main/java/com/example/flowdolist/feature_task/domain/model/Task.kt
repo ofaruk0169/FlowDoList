@@ -1,11 +1,9 @@
 package com.example.flowdolist.feature_task.domain.model
 
-import android.graphics.Color
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.flowdolist.ui.theme.*
-
 
 //This will define the field that our Task table should have
 
