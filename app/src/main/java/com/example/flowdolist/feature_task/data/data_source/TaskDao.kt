@@ -26,5 +26,4 @@ interface TaskDao  {
     @Query("SELECT * FROM Task ORDER BY taskCreatedAt DESC")
     fun getMostRecentTasks(): Flow<List<Task>>
 
-
 }
