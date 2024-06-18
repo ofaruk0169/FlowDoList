@@ -2,7 +2,6 @@ package com.example.flowdolist.feature_task.data.data_source
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.flowdolist.feature_task.data.data_source.TaskDao
 import com.example.flowdolist.feature_task.domain.model.Task
 
 @Database(
