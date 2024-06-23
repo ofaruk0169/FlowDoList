@@ -8,6 +8,5 @@ sealed class TasksEvent {
     data class DeleteTask(val task: Task): TasksEvent()
 
     object RestoreTask: TasksEvent()
-    //data class RestoreTask(val task: Task): TasksEvent()
     object ToggleOrderSection: TasksEvent()
 }
