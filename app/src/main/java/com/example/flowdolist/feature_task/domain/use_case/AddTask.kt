@@ -21,6 +21,6 @@ class AddTask(
         }
         repository.upsertTask(task)
     }
-    //woudl be more useful to have a snackbar here to display to the user this action cannot be performed, log cat isn't good enough.
+    //would be more useful to have a snackbar here to display to the user this action cannot be performed, log cat isn't good enough.
 }
 
