@@ -28,7 +28,7 @@ class TasksViewModel @Inject constructor(
 
     private var getTasksJob: Job? = null
 
-        init {
+    init {
         getTasks(TaskOrder.Date(OrderType.Descending))
     }
 
