@@ -22,8 +22,6 @@ fun OrderSection(
 ) {
     Column(
         modifier = modifier
-            //.background(Color.Gray)
-
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -41,6 +39,7 @@ fun OrderSection(
                 selected = taskOrder is TaskOrder.Date,
                 onSelect = { onOrderChange(TaskOrder.Date(taskOrder.orderType)) }
             )
+            Spacer(modifier = Modifier.width(8.dp))
             DefaultRadioButton(
                 text = "Color",
                 selected = taskOrder is TaskOrder.Color,
