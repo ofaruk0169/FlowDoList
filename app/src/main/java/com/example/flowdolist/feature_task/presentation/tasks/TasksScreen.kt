@@ -26,25 +26,17 @@ import com.example.flowdolist.feature_task.presentation.tasks.components.TaskIte
 import com.example.flowdolist.feature_task.presentation.util.Screen
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-
-
 @Composable
 fun TasksScreen(
     navController: NavController,
     viewModel: TasksViewModel = hiltViewModel()
 ) {
-    // Retrieve the state from the view model
     val state = viewModel.state.value
-
     val snackbarHostState = remember {
         SnackbarHostState()
     }
-
-
-    // Remember the coroutine scope
     val scope = rememberCoroutineScope()
 
-    // Define the scaffold layout
     Scaffold(
         snackbarHost = {
             SnackbarHost(snackbarHostState)

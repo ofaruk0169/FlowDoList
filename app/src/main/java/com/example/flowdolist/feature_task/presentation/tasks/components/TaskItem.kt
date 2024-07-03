@@ -44,13 +44,11 @@ fun TaskItem(
     Box(
         modifier = modifier
     ) {
-
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(16.dp)
                 .padding(end = 32.dp)
-            //this is so text does not overlap bin icon (end)
         ) {
             Text(
                 text = task.taskName,
