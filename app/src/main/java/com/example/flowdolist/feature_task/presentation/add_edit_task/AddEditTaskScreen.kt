@@ -132,7 +132,6 @@ fun AddEditTaskScreen (
             }
             Spacer(modifier = Modifier.height(16.dp))
 
-
             //Decided to use regular textfield instead of transparenttextfield as shown in tutorial.
 
             TextField(
@@ -148,9 +147,7 @@ fun AddEditTaskScreen (
                     .fillMaxWidth()
             )
 
-
             Spacer(modifier = Modifier.height(16.dp))
-
 
             TextField(
                 value = contentState.text,
@@ -164,9 +161,6 @@ fun AddEditTaskScreen (
                     .padding(horizontal = 16.dp, vertical = 8.dp)
                     .fillMaxWidth()
             )
-
-
-
         }
     }
 }

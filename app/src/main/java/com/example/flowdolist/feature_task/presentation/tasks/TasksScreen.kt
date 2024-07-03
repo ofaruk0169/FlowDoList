@@ -67,7 +67,7 @@ fun TasksScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Go with the flow and do your todos",
+                    text = "Flow with your todos",
                     style = MaterialTheme.typography.headlineSmall
                 )
                 IconButton(
