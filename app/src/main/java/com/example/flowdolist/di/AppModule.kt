@@ -15,12 +15,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
-
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-
-    //Instance of our database (Room)
     @Provides
     @Singleton
     fun provideTaskDatabase(app: Application): TaskDatabase {
@@ -30,13 +27,11 @@ object AppModule {
             TaskDatabase.DATABASE_NAME
         ).build()
     }
-
     @Provides
     @Singleton
     fun provideTaskRepository(db: TaskDatabase): TaskRepository {
         return TaskRepositoryImpl(db.dao)
     }
-
     @Provides
     @Singleton
     fun provideTaskUseCases(repository: TaskRepository): TaskUseCases {
