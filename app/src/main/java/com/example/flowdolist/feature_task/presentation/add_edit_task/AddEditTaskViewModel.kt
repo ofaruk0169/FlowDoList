@@ -68,17 +68,22 @@ class AddEditTaskViewModel @Inject constructor(
                     text = event.value
                 )
             }
+
+            //get rid below
             is AddEditTaskEvent.ChangeTitleFocus -> {
                 _taskTitle.value = taskTitle.value.copy(
                     //isHintVisible = !event.focusState.isFocused &&
                         //taskTitle.value.text.isBlank()
                 )
             }
+
             is AddEditTaskEvent.EnteredContent -> {
                 _taskContent.value = taskContent.value.copy(
                     text = event.value
                 )
             }
+
+            //get rid below
             is AddEditTaskEvent.ChangeContentFocus -> {
                 _taskContent.value = taskContent.value.copy(
                     //isHintVisible = !event.focusState.isFocused &&
