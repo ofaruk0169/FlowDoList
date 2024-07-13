@@ -47,12 +47,10 @@ class AddEditTaskViewModel @Inject constructor(
                         currentTaskId = task.id
                         _taskTitle.value = taskTitle.value.copy(
                             text = task.taskName,
-                            //isHintVisible = false
                         )
 
                         _taskContent.value = taskContent.value.copy(
                             text = task.taskDescription,
-                            //isHintVisible = false
                         )
                         _taskColor.value = task.color
                     }
