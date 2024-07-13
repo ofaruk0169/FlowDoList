@@ -22,6 +22,7 @@ import androidx.compose.material.icons.filled.Save
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -52,7 +53,9 @@ fun AddEditTaskScreen (
     val titleState = viewModel.taskTitle.value
     val contentState = viewModel.taskContent.value
 
-    val snackbarHostState = remember { SnackbarHostState() }
+    val snackbarHostState = remember {
+        SnackbarHostState()
+    }
 
     val taskBackgroundAnimatable = remember {
         Animatable(
@@ -86,7 +89,9 @@ fun AddEditTaskScreen (
                 Icon(imageVector = Icons.Default.Save, contentDescription = "Save Task")
             }
         },
-        snackbarHost = { snackbarHostState }
+        snackbarHost = {
+            SnackbarHost(snackbarHostState)
+        }
     ) { paddingValues ->
         Column(
             modifier = Modifier
@@ -132,16 +137,13 @@ fun AddEditTaskScreen (
             }
             Spacer(modifier = Modifier.height(16.dp))
 
-            //Decided to use regular textfield instead of transparenttextfield as shown in tutorial.
-
             TextField(
                 value = titleState.text,
                 onValueChange = { newValue ->
                     viewModel.onEvent(AddEditTaskEvent.EnteredTitle(newValue))
-                    // You can perform any actions you need with the new value here
                 },
                 label = { Text(titleState.hint) }, // Assuming titleState.hint contains the hint text
-                textStyle = TextStyle(fontSize = 20.sp), // Set the desired font size here
+                textStyle = TextStyle(fontSize = 20.sp),
                 modifier = Modifier
                     .padding(horizontal = 16.dp, vertical = 16.dp)
                     .fillMaxWidth()
@@ -153,10 +155,9 @@ fun AddEditTaskScreen (
                 value = contentState.text,
                 onValueChange = { newValue ->
                     viewModel.onEvent(AddEditTaskEvent.EnteredContent(newValue))
-                    // You can perform any actions you need with the new value here
                 },
                 label = { Text(contentState.hint) }, // Assuming contentState.hint contains the hint text
-                textStyle = TextStyle(fontSize = 20.sp), // Set the desired font size here
+                textStyle = TextStyle(fontSize = 20.sp),
                 modifier = Modifier
                     .padding(horizontal = 16.dp, vertical = 8.dp)
                     .fillMaxWidth()
