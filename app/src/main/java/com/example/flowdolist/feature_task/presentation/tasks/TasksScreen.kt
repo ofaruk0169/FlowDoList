@@ -42,7 +42,6 @@ fun TasksScreen(
             SnackbarHost(snackbarHostState)
         },
         floatingActionButton = {
-            // Floating action button for adding tasks
             FloatingActionButton(
                 onClick = {
                     navController.navigate(Screen.AddEditTaskScreen.route)
