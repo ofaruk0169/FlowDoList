@@ -69,7 +69,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-
     //Room
     val room_version = "2.6.1"
     implementation ("androidx.room:room-ktx:$room_version")
