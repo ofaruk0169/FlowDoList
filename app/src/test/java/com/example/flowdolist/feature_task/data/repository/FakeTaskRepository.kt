@@ -9,12 +9,16 @@ class FakeTaskRepository : TaskRepository {
 
     private val tasks = mutableListOf<Task>()
 
-    override suspend fun upsertTask(task: Task) {
-        tasks.add(task)
+    override fun getMostRecentTasks(): Flow<List<Task>> {
+        return flow { emit(tasks) }
     }
 
     override suspend fun getTaskById(id: Int): Task? {
         return tasks.find { it.id == id }
+    }
+
+    override suspend fun upsertTask(task: Task) {
+        tasks.add(task)
     }
 
     override suspend fun deleteTask(task: Task) {
@@ -25,8 +29,4 @@ class FakeTaskRepository : TaskRepository {
         TODO("Not yet implemented")
     }
 
-    //may need only this for testing
-    override fun getMostRecentTasks(): Flow<List<Task>> {
-        return flow { emit(tasks) }
-    }
 }
