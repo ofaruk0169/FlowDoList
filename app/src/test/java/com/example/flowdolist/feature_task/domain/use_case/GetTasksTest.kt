@@ -23,6 +23,7 @@ class GetTasksTest {
         getTasks = GetTasks(fakeRepository)
 
         val tasksToInsert = mutableListOf<Task>()
+
         ('a'..'z').forEachIndexed { index, c ->
             tasksToInsert.add(
                 Task(
