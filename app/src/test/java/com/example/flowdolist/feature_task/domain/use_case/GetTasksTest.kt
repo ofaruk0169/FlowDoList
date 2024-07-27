@@ -8,7 +8,6 @@ import com.example.flowdolist.feature_task.domain.util.TaskOrder
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
-
 import org.junit.Before
 import org.junit.Test
 
@@ -94,5 +93,3 @@ class GetTasksTest {
         }
     }
 }
-
-//we have made a fake repository do the rest some other day.
