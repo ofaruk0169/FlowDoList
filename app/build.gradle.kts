@@ -70,9 +70,9 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     //Room
-    val room_version = "2.6.1"
-    implementation ("androidx.room:room-ktx:$room_version")
-    kapt ("androidx.room:room-compiler:$room_version")
+    val roomVersion = "2.6.1"
+    implementation ("androidx.room:room-ktx:$roomVersion")
+    kapt ("androidx.room:room-compiler:$roomVersion")
 
     //Dagger - Hilt
     implementation("com.google.dagger:hilt-android:2.50")
