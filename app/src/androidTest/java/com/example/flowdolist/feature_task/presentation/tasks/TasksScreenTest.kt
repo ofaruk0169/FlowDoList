@@ -16,7 +16,6 @@ import com.example.flowdolist.ui.theme.FlowDoListTheme
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -37,7 +36,6 @@ class TasksScreenTest {
         hiltRule.inject()
         composeRule.setContent {
             val navController = rememberNavController()
-            //we need to assign our theme here. This is potentially my problem.
            FlowDoListTheme {
                NavHost(
                    navController = navController,
@@ -46,11 +44,9 @@ class TasksScreenTest {
                    composable(route = Screen.TasksScreen.route) {
                        TasksScreen(navController = navController)
 
-
                    }
                }
            }
-
         }
     }
     @Test
