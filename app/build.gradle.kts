@@ -87,7 +87,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1")
     testImplementation ("com.google.truth:truth:1.1.3")
     testImplementation ("com.squareup.okhttp3:mockwebserver:4.9.1")
-    testImplementation("io.mockk:mockk:1.10.5")
+    testImplementation("io.mockk:mockk:1.13.12")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.6.8")
 
 
@@ -101,7 +101,7 @@ dependencies {
     androidTestImplementation ("androidx.test.ext:junit:1.2.1")
     androidTestImplementation ("androidx.test:core-ktx:1.6.1")
     androidTestImplementation ("com.squareup.okhttp3:mockwebserver:4.9.1")
-    androidTestImplementation ("io.mockk:mockk-android:1.10.5")
+    androidTestImplementation ("io.mockk:mockk-android:1.13.12")
     androidTestImplementation ("androidx.test:runner:1.6.1")
 }
 
