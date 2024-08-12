@@ -4,7 +4,7 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-06-18T20:44:11.496471500Z">
+        <DropdownSelection timestamp="2024-08-05T19:28:29.037617500Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Omare\.android\avd\Pixel_8_Pro_API_30.avd" />
@@ -15,6 +15,14 @@
       </SelectionState>
       <SelectionState runConfigName="clickToggleOrderSection_isVisible()">
         <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2024-08-05T19:27:58.211707500Z">
+          <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Omare\.android\avd\Pixel_8_Pro_API_30.avd" />
+            </handle>
+          </Target>
+        </DropdownSelection>
+        <DialogSelection />
       </SelectionState>
       <SelectionState runConfigName="TasksScreenTest">
         <option name="selectionMode" value="DROPDOWN" />

@@ -45,7 +45,6 @@ class TasksScreenTest {
                ) {
                    composable(route = Screen.TasksScreen.route) {
                        TasksScreen(navController = navController)
-
                    }
                }
            }
@@ -56,8 +55,5 @@ class TasksScreenTest {
         composeRule.onNodeWithTag(TestTags.ORDER_SECTION).assertDoesNotExist()
         composeRule.onNodeWithContentDescription("Sort").performClick()
         composeRule.onNodeWithTag(TestTags.ORDER_SECTION).assertIsDisplayed()
-
-
     }
-
 }
