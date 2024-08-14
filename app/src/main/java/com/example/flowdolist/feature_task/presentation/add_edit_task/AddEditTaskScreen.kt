@@ -89,7 +89,7 @@ fun AddEditTaskScreen (
                     viewModel.onEvent(AddEditTaskEvent.SaveTask)
                 },
             ) {
-                Icon(imageVector = Icons.Default.Save, contentDescription = "Save Task")
+                Icon(imageVector = Icons.Default.Save, contentDescription = "Save")
             }
         },
         snackbarHost = {
@@ -164,9 +164,9 @@ fun AddEditTaskScreen (
                 modifier = Modifier
                     .padding(horizontal = 16.dp, vertical = 16.dp)
                     .fillMaxWidth()
-                    .onFocusChanged { focusState ->
-                        viewModel.onEvent(AddEditTaskEvent.ChangeTitleFocus(focusState))
-                    }
+//                    .onFocusChanged { focusState ->
+//                        viewModel.onEvent(AddEditTaskEvent.ChangeTitleFocus(focusState))
+//                    }
                     .testTag(TestTags.TITLE_TEXT_FIELD) // Applying the test tag
             )
 

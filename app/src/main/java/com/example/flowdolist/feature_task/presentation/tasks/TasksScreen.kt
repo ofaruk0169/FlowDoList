@@ -49,7 +49,7 @@ fun TasksScreen(
                     navController.navigate(Screen.AddEditTaskScreen.route)
                 }
             ) {
-                Icon(imageVector = Icons.Default.Add, contentDescription = "Add Task")
+                Icon(imageVector = Icons.Default.Add, contentDescription = "Add")
             }
         },
 
