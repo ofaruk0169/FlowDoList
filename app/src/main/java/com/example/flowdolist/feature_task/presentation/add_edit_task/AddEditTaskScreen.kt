@@ -33,13 +33,16 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.flowdolist.core.util.TestTags
 import com.example.flowdolist.feature_task.domain.model.Task
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -137,30 +140,66 @@ fun AddEditTaskScreen (
             }
             Spacer(modifier = Modifier.height(16.dp))
 
+//            TextField(
+//                value = titleState.text,
+//                onValueChange = { newValue ->
+//                    viewModel.onEvent(AddEditTaskEvent.EnteredTitle(newValue))
+//                },
+//                label = { Text(titleState.hint) }, // Assuming titleState.hint contains the hint text
+//                textStyle = TextStyle(fontSize = 20.sp),
+//                modifier = Modifier
+//                    .padding(horizontal = 16.dp, vertical = 16.dp)
+//                    .fillMaxWidth(),
+//
+//            )
+
+            // Title TextField with testTag and focus handling
             TextField(
                 value = titleState.text,
                 onValueChange = { newValue ->
                     viewModel.onEvent(AddEditTaskEvent.EnteredTitle(newValue))
                 },
-                label = { Text(titleState.hint) }, // Assuming titleState.hint contains the hint text
+                label = { Text(titleState.hint) }, // Display hint as label
                 textStyle = TextStyle(fontSize = 20.sp),
                 modifier = Modifier
                     .padding(horizontal = 16.dp, vertical = 16.dp)
                     .fillMaxWidth()
+                    .onFocusChanged { focusState ->
+                        viewModel.onEvent(AddEditTaskEvent.ChangeTitleFocus(focusState))
+                    }
+                    .testTag(TestTags.TITLE_TEXT_FIELD) // Applying the test tag
             )
 
             Spacer(modifier = Modifier.height(16.dp))
+
+//            TextField(
+//                value = contentState.text,
+//                onValueChange = { newValue ->
+//                    viewModel.onEvent(AddEditTaskEvent.EnteredContent(newValue))
+//                },
+//                label = { Text(contentState.hint) }, // Assuming contentState.hint contains the hint text
+//                textStyle = TextStyle(fontSize = 20.sp),
+//                //testTag = TestTags.TITLE_TEXT_FIELD,
+//                modifier = Modifier
+//                    .padding(horizontal = 16.dp, vertical = 8.dp)
+//                    .fillMaxWidth()
+//            )
+
 
             TextField(
                 value = contentState.text,
                 onValueChange = { newValue ->
                     viewModel.onEvent(AddEditTaskEvent.EnteredContent(newValue))
                 },
-                label = { Text(contentState.hint) }, // Assuming contentState.hint contains the hint text
+                label = { Text(contentState.hint) }, // Display hint as label
                 textStyle = TextStyle(fontSize = 20.sp),
                 modifier = Modifier
                     .padding(horizontal = 16.dp, vertical = 8.dp)
                     .fillMaxWidth()
+                    .onFocusChanged { focusState ->
+                        viewModel.onEvent(AddEditTaskEvent.ChangeContentFocus(focusState))
+                    }
+                    .testTag(TestTags.CONTENT_TEXT_FIELD) // Applying the test tag
             )
         }
     }
